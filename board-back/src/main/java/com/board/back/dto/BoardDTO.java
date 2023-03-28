@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 public class BoardDTO {
-
+	// test
 	private Long id;
 	private Menu menu;
 	private String title;

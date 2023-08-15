@@ -25,7 +25,7 @@ public class UserContoller {
     @GetMapping("/me")
     public ResponseEntity<UserResponseDto> getMyUserInfo() {
         UserResponseDto myInfoBySecurity = userService.getMyInfoBySecurity();
-        System.out.println(myInfoBySecurity.getUsername());
+
         return ResponseEntity.ok((myInfoBySecurity));
         // return ResponseEntity.ok(memberService.getMyInfoBySecurity());
     }

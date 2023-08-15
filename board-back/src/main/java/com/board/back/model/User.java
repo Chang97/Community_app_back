@@ -70,7 +70,7 @@ public class User extends BaseTime  implements UserDetails{
         
         Collection<GrantedAuthority> collectors = new ArrayList<>();
         collectors.add(() -> {
-            return "계정별 등록할 권한";
+            return this.role.toString();
         });
         
         //collectors.add(new SimpleGrantedAuthority("Role"));

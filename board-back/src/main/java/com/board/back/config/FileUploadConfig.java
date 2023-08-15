@@ -13,7 +13,7 @@ public class FileUploadConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/images/**")
+        registry.addResourceHandler("/image/**")
                 .addResourceLocations("file:" + uploadPath + "/"); // 이미지 저장 경로를 지정합니다.
     }
 }

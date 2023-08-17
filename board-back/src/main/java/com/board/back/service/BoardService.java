@@ -38,14 +38,10 @@ public class BoardService {
 	
 	@Transactional
 	public Board createBoard(Board board) {
-		
-		System.out.println("##############################");
-		System.out.println(board);
-		System.out.println("##############################");
 		return boardRepository.save(board);
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public ResponseEntity<Board> getBoard(Long id) {
 		Board board = boardRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found Data no [" + id + "]"));
 		board.setCounts(board.getCounts() + 1);

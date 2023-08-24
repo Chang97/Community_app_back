@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
@@ -16,8 +18,10 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
+	private static final Logger LOGGER = LoggerFactory.getLogger(JwtFilter.class);
     public static final String AUTHORIZATION_HEADER = "Authorization";
     public static final String BEARER_PREFIX = "Bearer ";
+    
     private final TokenProvider tokenProvider;
 
 
